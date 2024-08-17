@@ -1,0 +1,237 @@
+/* Basic reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header styling */
+header {
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0), rgba(0, 207, 253, 0)), url('images/header background.png'); /* Gradient and background image */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px; /* Increased padding */
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px; /* Increased height */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    z-index: 1000;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+/* Logo styling */
+header img {
+    height: 100px; /* Adjust logo size */
+    margin-bottom: 10px; /* Space below the logo */
+    border-radius: 12px; /* Rounded corners */
+}
+
+/* Navigation styling */
+nav {
+    background: url('images/navi new.jpg') no-repeat center center; /* Background image */
+    background-size: cover; /* Cover the entire nav area */
+    position: fixed;
+    left: 0;
+    top: 200px; /* Below the header */
+    bottom: 0;
+    width: 250px; /* Adjusted width */
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
+
+/* Navigation links styling */
+nav a {
+    color: #070000;
+    text-decoration: none;
+    padding: 15px;
+    transition: background 0.3s;
+    font-weight: bold; /* Bold text */
+    display: block;
+}
+
+nav a:hover {
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent background on hover */
+}
+
+/* Main content container styling */
+.container {
+    margin-left: 250px; /* Margin to accommodate the fixed sidebar */
+    padding: 70px;
+    width: calc(100% - 250px); /* Adjust width for the sidebar */
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 220px; /* Space for header */
+    padding-bottom: 80px; /* Space for footer */
+}
+
+/* Headings styling within the container */
+.container h2, .container h3 {
+    color: #333;
+}
+
+.container h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em; /* Larger headings */
+    border-bottom: 2px solid #007BFF; /* Underline with color */
+    padding-bottom: 10px;
+}
+
+.container h3 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 1.8em; /* Larger subheadings */
+}
+
+/* Paragraph styling */
+.container p {
+    margin: 20px 0;
+    line-height: 1.8;
+}
+
+/* Image styling */
+.container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+/* Slogan styling */
+.container .slogan {
+    font-size: 1.5em;
+    color: #007BFF;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Footer styling */
+footer {
+    background: url('images/header\ background\ -\ Copy.png') no-repeat center center, #343a40; /* Background image with fallback color */
+    color: #e9ecef; /* Light text color */
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    width: calc(100% - 250px); /* Adjust for sidebar width */
+    left: 250px; /* Adjust for sidebar width */
+    bottom: 0;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    background-size: cover;
+    background-position: center;
+}
+
+footer.hide-footer {
+    transform: translateY(100%);
+}
+
+/* Button styling */
+button {
+    background-color: #007BFF; /* Primary button color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+/* Input field styling */
+input[type="text"] {
+    width: 100%; /* Full width */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+/* Label styling */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Contact group styling */
+.contact-group {
+    margin-bottom: 30px;
+}
+
+/* Contact styling */
+.contact {
+    margin-bottom: 20px;
+}
+
+/* Action buttons within the list */
+.actions {
+    margin-top: 10px;
+}
+
+.action-button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+}
+
+.action-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        width: 100%;
+        height: auto;
+        position: static;
+        top: 0;
+        box-shadow: none;
+    }
+
+    .container {
+        margin-left: 0;
+        width: 100%;
+        padding-top: 120px; /* Adjusted for header */
+        padding-bottom: 60px; /* Space for footer */
+    }
+
+    footer {
+        width: 100%;
+        left: 0;
+    }
+}
