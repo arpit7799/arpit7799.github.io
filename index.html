@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Safety App - Home</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* Inline styles for the footer hiding functionality */
+        .hide-footer {
+            display: none;
+        }
+
+        header {
+            background: url('path-to-your-header-image.jpg') no-repeat center center;
+            background-size: cover;
+            color: #0f0101; /* Adjust text color if needed */
+            padding: 20px; /* Adjust padding if needed */
+            text-align: center;
+        }
+
+        header .logo {
+            max-width: 150px; /* Adjust the size of the logo if needed */
+            margin-bottom: 20px;
+        }
+
+        header .header-content h1 {
+            font-size: 2.5em; /* Adjust heading size */
+            margin-bottom: 10px;
+        }
+
+        header .header-content p {
+            font-size: 1.2em; /* Adjust paragraph size */
+            margin-bottom: 20px;
+        }
+
+        .auth-buttons {
+            margin-top: 20px;
+        }
+
+        .auth-buttons .btn {
+            color: #fff;
+            background-color: #007BFF; /* Button background color */
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .auth-buttons .btn.login {
+            background-color: #28a745; /* Login button color */
+        }
+
+        .auth-buttons .btn.signup {
+            background-color: #dc3545; /* Sign-up button color */
+        }
+
+        /* Your existing CSS for parent sections */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .parent:first-of-type {
+            background: #ffffff url("http://s8.favim.com/orig/140403/art-flower-flowers-grunge-Favim.com-1605689.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+        .parent:nth-of-type(2) {
+            background: #ffffff url("http://s9.favim.com/orig/130908/beauty-flower-flowers-photo-Favim.com-906054.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+        .parent:nth-of-type(3) {
+            background: #ffffff url("http://s12.favim.com/orig/160220/flowers-grunge-hipster-photography-Favim.com-4023702.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+        .parent:nth-of-type(4) {
+            background: #ffffff url("images/happy\ girl\(homepage\).jpeg") no-repeat center center fixed;
+            background-size: cover;
+        }
+        .parent:last-of-type {
+            background: #ffffff url("http://s3.favim.com/orig/47/beautiful-cute-flowers-rain-red-Favim.com-436699.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+        .parent {
+            width: 100%;
+            height: 150vh;
+            color: #fff;
+            text-shadow: 0 0 5px #000;
+            font-family: tahoma;
+            text-align: center;
+            line-height: 180%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .parent p {
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/BML MUNJAL UNIVERSITY.jpeg" alt="Women's Safety App Logo" class="logo">
+        <div class="header-content">
+            <h1>Women's Safety App</h1>
+            <p>Your safety, our priority. Stay protected with our comprehensive safety features.</p>
+        </div>
+        <div class="auth-buttons">
+            <a href="login page.html" target="_blank" class="btn login">Login</a>
+            <a href="sign up page.html" target="_blank" class="btn signup">Sign Up</a>
+        </div>
+    </header>
+
+    <main>
+        <a href="https://maps.google.com/" target="_blank" class="parent">
+            <div class="content">
+                <h1>Real-Time Location Tracking</h1>
+                <p>Track your location in real-time and share it with trusted contacts in case of an emergency. Our app ensures that help is always within reach.</p>
+                <img src="images/real time tracking.jpeg" width="100" alt="Location Tracking"/>
+            </div>
+        </a>
+    
+        <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.safetyhub&hl=en_IN" target="_blank" class="parent">
+            <div class="content">
+                <h1>Emergency Alerts</h1>
+                <p>Send instant alerts with your location and personal details to emergency contacts and local authorities. The app is designed to get you the help you need quickly.</p>
+                <img src="images/emergency alerts.jpeg" width="100" alt="Emergency Alerts"/>
+            </div>
+        </a>
+    
+        <a href="https://www.youtube.com/watch?v=WCn4GBcs84s" target="_blank" class="parent">
+            <div class="content">
+                <h1>Self-Defense Tips</h1>
+                <p>Access a range of self-defense tips and tutorials to enhance your personal safety. Empower yourself with knowledge and practical advice.</p>
+                <img src="images/self defense tips.jpeg" width="100" alt="Self-Defense Tips"/>
+            </div>
+        </a>
+    
+        <a href="safety resources.html" target="_blank" class="parent">
+            <div class="content">
+                <h1>Safety Resources</h1>
+                <p>Find essential safety resources, including helplines and support services. Our app provides quick access to the information you need in critical moments.</p>
+                <img src="images/safety resources.png" width="100" alt="Safety Resources"/>
+            </div>
+        </a>
+    
+        <a href="https://gurgaon.haryanapolice.gov.in/women-safety" target="_blank" class="parent">
+            <div class="content">
+                <h1>Community Support</h1>
+                <p>Join a supportive community dedicated to women's safety. Share experiences, receive support, and stay informed about safety initiatives and events.</p>
+                <img src="images/cummunity support.jpeg" width="100" alt="Community Support"/>
+            </div>
+        </a>
+    </main>
+    
+
+    <footer id="footer">
+        <p>&copy; 2024 Women's Safety App. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to hide and show the footer based on scroll direction
+        let lastScrollTop = 0;
+        const footer = document.getElementById('footer');
+
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                // Scrolling down
+                footer.classList.add('hide-footer');
+            } else {
+                // Scrolling up
+                footer.classList.remove('hide-footer');
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+        });
+
+        // Ensure the footer is visible when at the top of the page
+        window.addEventListener('load', function() {
+            footer.classList.remove('hide-footer');
+        });
+    </script>
+</body>
+</html>

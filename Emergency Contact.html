@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Contacts</title>
+    <link rel="stylesheet" href="styles-Emergency contacts.css"> <!-- Link to the external CSS file -->
+    <style>
+        /* CSS styles for the layout adjustments */
+        .social-media {
+            margin-top: 20px; /* Space from the previous content */
+            text-align: center;
+        }
+
+        .social-media h3 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .social-media a {
+            display: flex; /* Use flexbox to align icon and text */
+            align-items: center; /* Center items vertically */
+            margin: 10px 0; /* Margin for vertical spacing */
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .social-media .social-icon {
+            width: 32px; /* Adjust size of the icons */
+            height: 32px; /* Maintain aspect ratio */
+            margin-right: 10px; /* Space between icon and text */
+        }
+
+        .social-media a img {
+            vertical-align: middle; /* Align image with text */
+        }
+
+        footer.hide-footer {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/BML MUNJAL UNIVERSITY.jpeg" alt="Logo">
+        <h1>Emergency Contacts</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="Understanding Safety.html">Understanding Safety</a>
+        <a href="Emergency Contact.html">Emergency Contacts</a>
+        <a href="About App.html">About Our APP</a>
+        <a href="credits.html">Credits</a> <!-- Added Credits link -->
+    </nav>
+
+    <div class="container">
+        <h2>Emergency Contact Information</h2>
+        <div class="contact-group">
+            <h3>Emergency Services</h3>
+            <ul>
+                <li>Police: <strong>100</strong></li>
+                <li>Ambulance: <strong>102</strong></li>
+                <li>Fire Department: <strong>101</strong></li>
+                <li>Women's Helpline: <strong>1091</strong></li>
+                <li>Child Helpline: <strong>1098</strong></li>
+            </ul>
+        </div>
+
+        <div class="contact-group">
+            <h3>Add Your Own Emergency Contacts</h3>
+            <div class="contact">
+                <label for="contact-type">Contact Type</label>
+                <input type="text" id="contact-type" placeholder="Type of contact (e.g., Family, Friend)">
+            </div>
+            <div class="contact">
+                <label for="contact-name">Name</label>
+                <input type="text" id="contact-name" placeholder="Enter contact name">
+            </div>
+            <div class="contact">
+                <label for="contact-number">Phone Number</label>
+                <input type="text" id="contact-number" placeholder="Enter phone number">
+            </div>
+            <button onclick="addContact()">Add Contact</button>
+        </div>
+
+        <div class="emergency-list">
+            <h3>Saved Emergency Contacts</h3>
+            <ul id="contacts-list">
+                <!-- User-added emergency contacts will be listed here -->
+            </ul>
+        </div>
+
+        <!-- New Tips Section -->
+        <div class="emergency-tips">
+            <h3>Tips for Better Emergency Support</h3>
+            <ul>
+                <li><strong>Update Regularly:</strong> Keep your emergency contacts up to date to ensure quick access during emergencies.</li>
+                <li><strong>Include Key Contacts:</strong> Add not just family members but also neighbors or friends who can help in a crisis.</li>
+                <li><strong>Specify Contact Details:</strong> Clearly state the relationship and contact details for each person to avoid confusion.</li>
+                <li><strong>Set Up Speed Dial:</strong> Program emergency numbers into your phone’s speed dial for rapid access.</li>
+                <li><strong>Share Information:</strong> Inform trusted contacts about their role in emergencies, including how they should respond.</li>
+                <li><strong>Back Up Contacts:</strong> Store important contacts in a cloud service or a printed copy in a safe location.</li>
+                <li><strong>Test Your List:</strong> Regularly test the contacts by making sure their numbers are correct and they’re reachable.</li>
+            </ul>
+        </div>
+
+        <!-- New Social Media Section -->
+        <div class="social-media">
+            <h3>Follow Us</h3>
+            <a href="https://www.facebook.com/YourPage" target="_blank">
+                <img src="images/Facebook.jpeg" alt="Facebook" class="social-icon"> Facebook
+            </a>
+            <a href="https://x.com/raone7799?t=ksXZHny5c1VCkEv3GPDVjg&s=09" target="_blank">
+                <img src="images/X.png" alt="X" class="social-icon"> X
+            </a>
+            <a href="https://www.instagram.com/arpit_7799?igsh=MW9uNTA1OTZudmsycw==" target="_blank">
+                <img src="images/instagram.jpeg" alt="Instagram" class="social-icon"> Instagram
+            </a>
+            <a href="https://youtube.com/YOUR_PROFILE_URL" target="_blank">
+                <img src="images/Youtube.png" alt="YouTube" class="social-icon"> YouTube
+            </a>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <p>&copy; 2024 Women's Safety Awareness. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Load saved contacts from localStorage
+        document.addEventListener('DOMContentLoaded', loadContacts);
+
+        function loadContacts() {
+            const contacts = JSON.parse(localStorage.getItem('contacts')) || [];
+            const contactsList = document.getElementById('contacts-list');
+            contactsList.innerHTML = '';
+            contacts.forEach(contact => {
+                addContactToList(contact);
+            });
+        }
+
+        function addContact() {
+            const contactType = document.getElementById('contact-type').value;
+            const contactName = document.getElementById('contact-name').value;
+            const contactNumber = document.getElementById('contact-number').value;
+
+            if (contactType && contactName && contactNumber) {
+                const contact = {
+                    type: contactType,
+                    name: contactName,
+                    number: contactNumber
+                };
+
+                // Save to localStorage
+                const contacts = JSON.parse(localStorage.getItem('contacts')) || [];
+                contacts.push(contact);
+                localStorage.setItem('contacts', JSON.stringify(contacts));
+
+                addContactToList(contact);
+
+                // Clear the input fields
+                document.getElementById('contact-type').value = '';
+                document.getElementById('contact-name').value = '';
+                document.getElementById('contact-number').value = '';
+            } else {
+                alert('Please fill in all fields.');
+            }
+        }
+
+        function addContactToList(contact) {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${contact.type}: ${contact.name} - ${contact.number}`;
+
+            const actions = document.createElement('div');
+            actions.className = 'actions';
+
+            // Call button
+            const callButton = document.createElement('button');
+            callButton.className = 'action-button';
+            callButton.textContent = 'Call';
+            callButton.onclick = () => window.location.href = `tel:${contact.number}`;
+            actions.appendChild(callButton);
+
+            // Message button
+            const messageButton = document.createElement('button');
+            messageButton.className = 'action-button';
+            messageButton.textContent = 'Message';
+            messageButton.onclick = () => window.location.href = `sms:${contact.number}`;
+            actions.appendChild(messageButton);
+
+            // Video Call button
+            const videoCallButton = document.createElement('button');
+            videoCallButton.className = 'action-button';
+            videoCallButton.textContent = 'Video Call';
+            videoCallButton.onclick = () => alert('Video call feature is not implemented.'); // Placeholder
+            actions.appendChild(videoCallButton);
+
+            // Location Share button
+            const locationShareButton = document.createElement('button');
+            locationShareButton.className = 'action-button';
+            locationShareButton.textContent = 'Share Location';
+            locationShareButton.onclick = () => alert('Location sharing feature is not implemented.'); // Placeholder
+            actions.appendChild(locationShareButton);
+
+            listItem.appendChild(actions);
+
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'Remove';
+            removeButton.onclick = () => {
+                removeContact(contact);
+                listItem.remove();
+            };
+
+            listItem.appendChild(removeButton);
+            document.getElementById('contacts-list').appendChild(listItem);
+        }
+
+        function removeContact(contactToRemove) {
+            let contacts = JSON.parse(localStorage.getItem('contacts')) || [];
+            contacts = contacts.filter(contact => contact.number !== contactToRemove.number);
+            localStorage.setItem('contacts', JSON.stringify(contacts));
+        }
+
+        let lastScrollTop = 0;
+        const footer = document.getElementById('footer');
+
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                // Scrolling down
+                footer.classList.add('hide-footer');
+            } else {
+                // Scrolling up
+                footer.classList.remove('hide-footer');
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+        });
+
+        // Ensure the footer is visible when at the top of the page
+        window.addEventListener('load', function() {
+            footer.classList.remove('hide-footer');
+        });
+    </script>
+</body>
+</html>

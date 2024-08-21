@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Our Women Safety App</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="signup page.css">
+</head>
+<body>
+    <header>
+        <img src="images/BML MUNJAL UNIVERSITY.jpeg" alt="App Logo" class="logo">
+        <div class="header-content">
+            <h1>Sign Up for Our Women Safety App</h1>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="Understanding Safety.html">Understanding Safety</a>
+            <a href="Emergency Contact.html">Emergency Contacts</a>
+            <a href="About App.html">About Our APP</a>
+            <a href="credits.html">Credits</a> <!-- Added Credits link -->
+        </nav>
+    </aside>
+
+<!-- Social Media Links Section -->
+<aside class="social-media">
+    <h2>Follow Us</h2>
+    <div class="social-media-links">
+        <a href="https://www.instagram.com/arpit_7799?igsh=MW9uNTA1OTZudmsycw==" target="_blank" class="social-media-link">
+            <img src="images/instagram.jpeg" alt="Instagram" class="social-icon">
+            <span class="social-media-text">Instagram</span>
+        </a>
+        <a href="https://x.com/raone7799?t=ksXZHny5c1VCkEv3GPDVjg&s=09" target="_blank" class="social-media-link">
+            <img src="images/X.png" alt="X" class="social-icon">
+            <span class="social-media-text">X</span>
+        </a>
+        <a href="https://facebook.com/YOUR_PROFILE_URL" target="_blank" class="social-media-link">
+            <img src="images/Facebook.jpeg" alt="Facebook" class="social-icon">
+            <span class="social-media-text">Facebook</span>
+        </a>
+        <a href="https://youtube.com/YOUR_PROFILE_URL" target="_blank" class="social-media-link">
+            <img src="images/Youtube.png" alt="YouTube" class="social-icon">
+            <span class="social-media-text">YouTube</span>
+        </a>
+    </div>
+</aside>
+    </aside>
+
+    <div class="container">
+        <h2>Create Your Account</h2>
+        <form action="submit_signup.php" method="post" class="signup-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+
+        <p>Already have an account? <a href="login page.html">Login here</a>.</p>
+    </div>
+
+    <footer id="footer">
+        <p>&copy; 2024 Women's Safety APP Development. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let lastScrollTop = 0;
+        const footer = document.getElementById('footer');
+
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                // Scrolling down
+                footer.classList.add('hide-footer');
+            } else {
+                // Scrolling up
+                footer.classList.remove('hide-footer');
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+        });
+
+        // Ensure the footer is visible when at the top of the page
+        window.addEventListener('load', function() {
+            footer.classList.remove('hide-footer');
+        });
+    </script>
+</body>
+</html>
