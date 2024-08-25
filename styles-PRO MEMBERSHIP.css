@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #232427;
+    margin-top: 60px; /* Ensure content isn't hidden under fixed navbar */
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #c4c3ca;
+    background-color: #1f2029;
+    overflow-x: hidden;
+}
+
+a {
+    cursor: pointer;
+    transition: all 200ms linear;
+    color: #c4c3ca;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffeba7;
+    text-decoration: none;
+}
+
+.link {
+    color: #c4c3ca;
+}
+
+.link:hover {
+    color: #ffeba7;
+}
+
+p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+h4 {
+    font-weight: 600;
+}
+
+h6 span {
+    padding: 0 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #333;
+    padding: 15px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Ensure vertical alignment */
+}
+
+.nav-item {
+    position: relative;
+    margin-right: 20px; /* Adjust the value to set the desired gap */
+}
+
+/* Remove the margin from the last nav item to avoid extra space on the right end */
+.nav-item:last-child {
+    margin-right: 0;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    padding: 10px 15px; /* Adjust padding to increase the clickable area and add space */
+}
+
+.nav-link:hover {
+    color: #ffeb3b;
+}
+
+.dropdown-menu {
+    background-color: #1f2029;
+    border: none;
+    box-shadow: 0 8px 24px rgba(0,0,0,.2);
+    display: none; /* Hide dropdown menu by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+}
+
+.dropdown-item {
+    color: #c4c3ca;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-item:hover {
+    color: #ffeba7;
+    background-color: #102770;
+}
+
+/* Show dropdown when parent is hovered */
+.nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+/* Container and Card Styles */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    padding: 50px 20px; /* Adjust padding for the container */
+}
+
+.card {
+    position: relative;
+    min-width: 320px;
+    height: 500px;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2), inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+        5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    margin: 30px;
+}
+
+.card .box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background: #2a2b2f;
+    border-radius: 15px;
+    border: 2px solid #1e1f23;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.card:hover .box {
+    transform: translateY(-50px);
+    box-shadow: 0 40px 70px rgba(0, 0, 0, 0.5);
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+.icon {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: #f00;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.icon .fa {
+    color: #fff;
+    font-size: 2em;
+}
+
+.content h3 {
+    font-size: 1.8em;
+    color: #fff;
+    font-weight: 300;
+}
+
+.content h4 {
+    color: #fff;
+    font-size: 3em;
+    font-weight: 700;
+}
+
+.content h4 sup {
+    font-size: 0.75em;
+    font-weight: 300;
+}
+
+.content ul {
+    position: relative;
+}
+
+.content ul li {
+    list-style: none;
+    color: #fff;
+    margin: 5px 0;
+}
+
+.fa-check {
+    color: #0f0;
+    margin-right: 10px;
+}
+
+.fa-times {
+    color: #f00;
+    margin-right: 10px;
+}
+
+.content a {
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    background: #f00;
+    margin-top: 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400;
+}
+
+.card:nth-child(1) .content a,
+.card:nth-child(1) .content .icon {
+    background: #2196f3;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card:nth-child(2) .content a,
+.card:nth-child(2) .content .icon {
+    background: #e91e63;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card:nth-child(3) .content a,
+.card:nth-child(3) .content .icon {
+    background: #97dc47;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.toggle {
+    position: absolute;
+    top: 80px;
+    left: calc(50% - 650px);
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    font-size: 24px;
+    content: "\f185";
+}
+
+body.light .toggle {
+    background: #232427;
+    color: #fff;
+}
+
+body.light .toggle::before {
+    content: "\f186";
+}
+
+body.light {
+    background: #ebf5fc;
+}
+
+body.light .container .card {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.03),
+    inset -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 10px rgba(0, 0, 0, 0.03),
+    -10px -10px 15px rgba(255, 255, 255, 0.5);
+}
+
+body.light .container .card .box {
+    background: #ebf5fc;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.light .container .card:hover .box {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+body.light .container .card .box .content h3,
+body.light .container .card .box .content h4,
+body.light .container .card .box .content ul li {
+    color: #32a3b1;
+}
